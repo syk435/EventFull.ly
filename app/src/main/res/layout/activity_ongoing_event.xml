@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.zhao.karani.meetme.OngoingEvent">
+
+    <TextView android:id="@+id/eventTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textStyle="bold"/>
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/map"
+        android:layout_height="300dp"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:name="com.google.android.gms.maps.MapFragment"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="main menu"
+            android:onClick="returnToMenu"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="End Event"
+            android:onClick="endEvent"
+            />
+
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <EditText
+    android:id="@+id/testAddress"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:inputType="number"
+    android:hint="Edit Radius"
+    />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Radius"
+            android:onClick="setRadiusBox"
+            />
+        </LinearLayout>
+
+</LinearLayout>

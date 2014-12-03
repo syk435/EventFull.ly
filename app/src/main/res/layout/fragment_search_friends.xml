@@ -1,0 +1,70 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zhao.karani.meetme.SearchFriends">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:id="@+id/searchFragmentLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Search Friends"
+        android:textSize="26sp"
+        android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/userSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/prompt_email"
+            android:inputType="textEmailAddress"
+            android:paddingTop="15dp"
+            android:maxLines="1"
+            android:singleLine="true"/>
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            />
+        <TextView android:layout_width="wrap_content"
+            android:id="@+id/numSearchResults"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:visibility="gone"/>
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:paddingTop="16dp"-->
+        <!--android:layout_gravity="right"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TextView android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:text="Pablo"-->
+            <!--android:textSize="20sp"/>-->
+
+        <!--<Button-->
+            <!--android:id="@+id/testAdd"-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:drawableRight="@drawable/ic_add"-->
+            <!--android:drawableEnd="@drawable/ic_add"-->
+            <!--/>-->
+    <!--</LinearLayout>-->
+    </LinearLayout>
+
+</FrameLayout>

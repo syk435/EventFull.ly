@@ -1,0 +1,84 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center_vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.zhao.karani.meetme.CoverScreen">
+    <ScrollView
+        android:id="@+id/coverView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView android:id="@+id/appTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/app_name"
+                android:textSize="40sp"
+                android:typeface="sans"
+                android:textColor="#000080"
+                android:shadowColor="#000000"
+                android:shadowRadius="6"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/NoInternetConnection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="No Internet Connection."
+                android:textSize="18sp"
+                android:textColor="#880000"
+                android:layout_weight="1"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:paddingTop="25dp"
+                android:orientation="horizontal">
+
+
+                <Button
+                    android:id="@+id/email_sign_in_button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/action_sign_in"
+                    android:textStyle="bold"
+                    android:background="#11000000"
+                    android:onClick="logIn"/>
+
+                <TextView android:id="@+id/text_or1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="Or"
+                android:textStyle="bold"/>
+
+                <Button
+                android:id="@+id/sign_up1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/sign_up"
+                android:textStyle="bold"
+                android:onClick="signUp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

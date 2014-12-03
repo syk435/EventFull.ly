@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.zhao.karani.meetme.ManageFriends">
+
+        <ScrollView
+            android:id="@+id/manageFriendsView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <LinearLayout
+                android:id="@+id/manageFriendsLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView android:id="@+id/appTitle4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/app_name"
+                    android:textSize="40sp"
+                    android:typeface="sans"
+                    android:textColor="#000080"
+                    android:shadowColor="#000000"
+                    android:shadowRadius="6"
+                    android:textStyle="bold"/>
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="My Friends"
+                    android:textSize="26sp"
+                    android:textStyle="bold"/>
+
+                <fragment android:name="com.zhao.karani.meetme.SearchFriends"
+                    android:id="@+id/list"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    tools:layout="@layout/fragment_search_friends" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>

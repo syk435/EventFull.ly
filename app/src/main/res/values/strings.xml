@@ -17,5 +17,6 @@
     <string name="title_activity_create_event_first_page">CreateEventFirstPage</string>
     <string name="title_activity_create_event_second_page">CreateEventSecondPage</string>
     <string name="title_activity_cover_screen">CoverScreen</string>
+    <string name="title_activity_view_events">ViewEvents</string>
 
 </resources>

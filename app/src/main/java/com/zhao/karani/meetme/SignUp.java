@@ -110,7 +110,7 @@ public class SignUp extends Activity {
             if(jsonObj!=null && signUpResult.equals("Signup Successful")) {
                 Intent intent = new Intent(this, LoginActivity.class);
                 LoginActivity.setEmail(email);
-                intent.putExtra("fromSignUp",1);
+                intent.putExtra("fromSignUp","yo");
                 startActivity(intent);
 
                 //START TIMER HERE

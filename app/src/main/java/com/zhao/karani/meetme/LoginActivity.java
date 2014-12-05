@@ -35,14 +35,19 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        double x = 1;
         Intent intent = getIntent();
-        if(intent.getDoubleExtra("fromSignUp",-9999)==x){
+        if(intent.getStringExtra("fromSignUp")!=null && intent.getStringExtra("fromSignUp").equals("yo")){
             TextView t = (TextView) findViewById(R.id.fromSignUp);
             t.setVisibility(View.VISIBLE);
         }
 
         setCurrentClass(LoginActivity.class);
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        return;
     }
 
     public static String getEmail(){

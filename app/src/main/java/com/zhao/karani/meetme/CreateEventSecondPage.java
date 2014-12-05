@@ -111,6 +111,12 @@ public class CreateEventSecondPage extends Activity {
         };
     }
 
+    @Override
+    public void onBackPressed() {
+
+        return;
+    }
+
     public void doneCreateEvent(View view) {
         Intent intent = new Intent(this, OngoingEvent.class);
         intent.putExtra("eventTitle", this.eventTitle);

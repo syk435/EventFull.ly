@@ -65,6 +65,12 @@ public class MainMenu extends Activity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+
+        return;
+    }
+
     public void manageFriends(View view) {
         Intent intent = new Intent(this, ManageFriends.class);
         startActivity(intent);
@@ -81,7 +87,8 @@ public class MainMenu extends Activity {
     }
 
     public void testMethod(View view) {
-        LoginActivity.getTimer().cancel();
+        Intent intent = new Intent(this, ViewEvents.class);
+        startActivity(intent);
     }
 
     @Override

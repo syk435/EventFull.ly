@@ -46,7 +46,7 @@
                 <fragment android:name="com.zhao.karani.meetme.SearchFriends"
                     android:id="@+id/list"
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_gravity="center_horizontal"
                     tools:layout="@layout/fragment_search_friends" />
 

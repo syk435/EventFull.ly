@@ -2,6 +2,7 @@ package com.zhao.karani.meetme;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -16,6 +17,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.URLEncoder;
 import java.util.HashMap;
 
 
@@ -75,7 +77,7 @@ public class CreateEventSecondPage extends Activity {
 
             Button tempB = new Button(this);
             idFriendMap.put(tempB.getId(),email);
-            tempB.setCompoundDrawablesWithIntrinsicBounds(0,R.drawable.ic_add,0,0);
+            tempB.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_add,0,0,0);
             //tempB.setWidth(50);
             //tempB.setHeight(40);
             tempB.setText(email);
@@ -84,7 +86,8 @@ public class CreateEventSecondPage extends Activity {
 
             LinearLayout tempL = new LinearLayout(this);
             tempL.setMinimumWidth(myLInearLayout.getWidth());
-            tempL.setGravity(Gravity.RIGHT);
+            tempB.setBackgroundColor(Color.parseColor("#00ffffff"));
+            tempB.setGravity(Gravity.CENTER);
             tempL.setOrientation(LinearLayout.HORIZONTAL);
 //                    tempL.addView(tempV);
             tempL.addView(tempB);
@@ -128,7 +131,12 @@ public class CreateEventSecondPage extends Activity {
     }
 
     public String addFriend(String friendEmail) {
-        String result = HttpRequest.getData("http://meetmeutece.appspot.com/inviteFriendsHandler?eventID="+eventID+"&friendEmail="+friendEmail, "");
+        String result = "";
+        try{
+            result = HttpRequest.getData("http://meetmeutece.appspot.com/inviteFriendsHandler?eventID="+ URLEncoder.encode(eventID, "UTF-8")+"&friendEmail="+friendEmail, "");
+        } catch(Exception e) {
+            Log.d("Encoding error", e.toString());
+        }
         JSONObject jsonObj;
         String addFriendResult;
         try {

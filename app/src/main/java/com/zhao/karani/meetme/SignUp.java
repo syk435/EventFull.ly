@@ -14,6 +14,8 @@ import android.widget.TextView;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.URLEncoder;
+
 
 public class SignUp extends Activity {
 
@@ -94,7 +96,12 @@ public class SignUp extends Activity {
 
         if(signUpGood) {
             //call signuphandler to create new user
-            String result = HttpRequest.getData("http://meetmeutece.appspot.com/signUpHandler?userEmail="+email+"&userPassword="+userPwd+"&userName="+userName.replaceAll(" ","%20")+"&currentCity="+userCity+"&occupation="+userOccupation+"&age="+userAge, "");
+            String result = "";
+            try {
+                result = HttpRequest.getData("http://meetmeutece.appspot.com/signUpHandler?userEmail=" + email + "&userPassword=" + userPwd + "&userName=" + URLEncoder.encode(userName, "UTF-8") + "&currentCity=" + URLEncoder.encode(userCity, "UTF-8") + "&occupation=" + URLEncoder.encode(userOccupation, "UTF-8") + "&age=" + userAge, "");
+            } catch(Exception e){
+                Log.d("Url encoding error",e.toString());
+            }
             JSONObject jsonObj;
             String signUpResult;
             try {
@@ -134,6 +141,17 @@ public class SignUp extends Activity {
             }
             startActivity(intent);
         }
+    }
+
+    public void coverScreen(View view) {
+        Intent intent = new Intent(this, CoverScreen.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        return;
     }
 
     @Override

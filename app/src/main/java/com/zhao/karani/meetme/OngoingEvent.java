@@ -30,6 +30,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -269,7 +270,12 @@ public class OngoingEvent extends Activity {
         //Intent intent = new Intent(this, SignUp.class);
         //startActivity(intent);
         Log.d("eventid",getEventID());
-        String result = HttpRequest.getData("http://meetmeutece.appspot.com/finishEventHandler?eventID="+getEventID(), "");
+        String result = "";
+        try {
+            result = HttpRequest.getData("http://meetmeutece.appspot.com/finishEventHandler?eventID=" + URLEncoder.encode(getEventID(), "UTF-8"), "");
+        }catch(Exception e) {
+            Log.d("enoding error", e.toString());
+        }
         JSONObject jsonObj;
         //String FinishedEventResult;
         Log.d("finishedeventresult",result);

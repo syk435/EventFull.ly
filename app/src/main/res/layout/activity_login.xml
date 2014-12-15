@@ -2,36 +2,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
     tools:context="com.zhao.karani.meetme.LoginActivity">
 
-    <ScrollView
-        android:id="@+id/login_form1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/back_highlight"
+                android:onClick="coverScreen"/>
 
             <TextView android:id="@+id/appTitle1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/logo"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/app_name"
-                android:textSize="40sp"
-                android:typeface="sans"
-                android:textColor="#000080"
-                android:shadowColor="#000000"
-                android:shadowRadius="6"
-                android:textStyle="bold"/>
+                android:text="Sign in to your account"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"/>
 
             <TextView
                 android:id="@+id/fromSignUp"
@@ -40,8 +39,8 @@
                 android:layout_marginTop="16dp"
                 android:text="You have signed up. Please log in."
                 android:textSize="18sp"
-                android:textColor="#880000"
-                android:layout_weight="1"
+                android:textColor="#FFFFFF"
+                android:layout_gravity="center_horizontal"
                 android:visibility="gone"/>
 
             <TextView
@@ -49,10 +48,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Incorrect login, or signUp for an account"
+                android:text="Incorrect login, or sign up for an account"
                 android:textSize="18sp"
                 android:textColor="#880000"
-                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
                 android:visibility="gone"/>
 
             <LinearLayout
@@ -64,51 +63,40 @@
 
                 <AutoCompleteTextView
                     android:id="@+id/email1"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_email"
                     android:inputType="textEmailAddress"
+                    android:layout_gravity="center_horizontal"
                     android:maxLines="1"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/text_field_login"
                     android:singleLine="true"/>
 
                 <EditText
                     android:id="@+id/password1"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/text_field_login"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_password"
                     android:inputType="textPassword"
+                    android:layout_marginTop="10dp"
                     android:maxLines="1"
+                    android:textColor="#FFFFFF"
                     android:singleLine="true"/>
 
                 <Button
                     android:id="@+id/email_sign_in_button1"
-                    style="?android:textAppearanceSmall"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/action_sign_in"
-                    android:textStyle="bold"
+                    android:layout_marginTop="22dp"
+                    android:text="Sign in"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/button_highlight"
                     android:onClick="logIn"/>
 
-                <!--<TextView android:id="@+id/text_or1"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_marginTop="16dp"-->
-                    <!--android:layout_gravity="center_horizontal"-->
-                    <!--android:text="Or"-->
-                    <!--android:textStyle="bold"/>-->
-
-                <!--<Button-->
-                    <!--android:id="@+id/sign_up1"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="match_parent"-->
-                    <!--android:layout_marginTop="24dp"-->
-                    <!--android:text="@string/sign_up"-->
-                    <!--android:textStyle="bold"-->
-                    <!--android:onClick="signUp"/>-->
-
             </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
 
 </LinearLayout>

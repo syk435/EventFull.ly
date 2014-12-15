@@ -22,6 +22,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.URLEncoder;
+
 
 public class CreateEventFirstPage extends Activity implements GoogleMap.OnMapClickListener, GoogleMap.OnMapLongClickListener {
 
@@ -88,7 +90,12 @@ public class CreateEventFirstPage extends Activity implements GoogleMap.OnMapCli
             userDateTime = editText.getText().toString();
 
             if(!userRadius.equals("") && !eventTitle.equals("") && !userDateTime.equals("") && goodRadius) {
-                String result = HttpRequest.getData("http://meetmeutece.appspot.com/createEventHandler?userEmail=" + LoginActivity.getEmail() + "&eventTitle=" + eventTitle.replaceAll(" ","%20") + "&dateTimeToMeet=" + userDateTime.replaceAll(" ","%20") + "&destinationLongitude=" + destLong + "&destinationLatitude=" + destLat + "&radius=" + userRadius, "");
+                String result = "";
+                try {
+                    result = HttpRequest.getData("http://meetmeutece.appspot.com/createEventHandler?userEmail=" + LoginActivity.getEmail() + "&eventTitle=" + URLEncoder.encode(eventTitle, "UTF-8") + "&dateTimeToMeet=" + URLEncoder.encode(userDateTime,"UTF-8") + "&destinationLongitude=" + destLong + "&destinationLatitude=" + destLat + "&radius=" + userRadius, "");
+                } catch (Exception e) {
+                    Log.d("Url encoding error",e.toString());
+                }
                 JSONObject jsonObj;
                 String loginResult;
                 Log.d("result", result);
@@ -150,4 +157,15 @@ public class CreateEventFirstPage extends Activity implements GoogleMap.OnMapCli
         }
         return super.onOptionsItemSelected(item);
     }
+
+//    @Override
+//    public void onBackPressed() {
+//
+//        return;
+//    }
+//
+//    public void returnMenu(View view) {
+//        Intent intent = new Intent(this, MainMenu.class);
+//        startActivity(intent);
+//    }
 }

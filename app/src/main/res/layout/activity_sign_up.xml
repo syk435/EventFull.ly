@@ -2,12 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
     tools:context="com.zhao.karani.meetme.SignUp">
 
     <ScrollView
@@ -20,18 +20,29 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/back_highlight"
+                android:onClick="coverScreen"/>
+
             <TextView android:id="@+id/appTitle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/logo"/>
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/app_name"
-                android:textSize="40sp"
-                android:typeface="sans"
-                android:textColor="#000080"
-                android:shadowColor="#000000"
-                android:shadowRadius="6"
-                android:textStyle="bold"/>
+                android:text="Sign up for an account"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"/>
+
             <TextView
                 android:id="@+id/reselect"
                 android:layout_width="wrap_content"
@@ -39,18 +50,18 @@
                 android:layout_marginTop="16dp"
                 android:text="User with this mail already exists!"
                 android:textSize="18sp"
+                android:layout_gravity="center_horizontal"
                 android:textColor="#880000"
-                android:layout_weight="1"
                 android:visibility="gone"/>
             <TextView
                 android:id="@+id/reselect1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Please use a correct email"
+                android:text="Please use a valid email"
                 android:textSize="18sp"
                 android:textColor="#880000"
-                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
                 android:visibility="gone"/>
             <TextView
                 android:id="@+id/reselect2"
@@ -60,7 +71,7 @@
                 android:text="Pease use a longer password"
                 android:textSize="18sp"
                 android:textColor="#880000"
-                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
                 android:visibility="gone"/>
             <TextView
                 android:id="@+id/reselect3"
@@ -70,61 +81,79 @@
                 android:text="Please use an integer age"
                 android:textSize="18sp"
                 android:textColor="#880000"
-                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
                 android:visibility="gone"/>
     <EditText
         android:id="@+id/userEmailSignUp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/prompt_email"
         android:inputType="textEmailAddress"
-        android:paddingTop="15dp"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"
         android:maxLines="1"
+        android:background="@drawable/text_field_login"
+        android:layout_gravity="center_horizontal"
         android:singleLine="true"/>
 
     <EditText
         android:id="@+id/userPasswordSignUp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:hint="@string/prompt_password"
-        android:paddingTop="15dp"
+        android:layout_marginTop="10dp"
         android:inputType="textPassword"
+        android:background="@drawable/text_field_login"
         android:maxLines="1"
+        android:textColor="#FFFFFF"
         android:singleLine="true"/>
 
     <EditText
         android:id="@+id/userNameSignUp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="First and Last Name"
-        android:paddingTop="15dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/text_field_login"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
         android:maxLines="1"
         android:singleLine="true"/>
 
     <EditText
         android:id="@+id/userCitySignUp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="City"
-        android:paddingTop="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/text_field_login"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#FFFFFF"
         android:maxLines="1"
         android:singleLine="true"/>
 
     <EditText
         android:id="@+id/userOccupationSignUp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:hint="Occupation"
-        android:paddingTop="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/text_field_login"
+        android:textColor="#FFFFFF"
         android:maxLines="1"
         android:singleLine="true"/>
 
     <EditText
         android:id="@+id/userAgeSignUp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:hint="Age"
-        android:paddingTop="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/text_field_login"
+        android:textColor="#FFFFFF"
         android:maxLines="1"
         android:singleLine="true"/>
 
@@ -134,7 +163,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/sign_up"
-        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/button_highlight"
+        android:textColor="#FFFFFF"
         android:onClick="signUp"/>
     </LinearLayout>
     </ScrollView>

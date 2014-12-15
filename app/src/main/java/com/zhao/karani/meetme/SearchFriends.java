@@ -2,6 +2,7 @@ package com.zhao.karani.meetme;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +20,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.URLEncoder;
 import java.util.HashMap;
 
 
@@ -133,7 +135,12 @@ public class SearchFriends extends Fragment implements Button.OnClickListener{
                 idFriendMap.clear();
 
                 String userSearch = editText.getText().toString();
-                String result1 = HttpRequest.getData("http://meetmeutece.appspot.com/searchFriends?searchContent="+userSearch, "");
+                String result1 = "";
+                try {
+                    result1 = HttpRequest.getData("http://meetmeutece.appspot.com/searchFriends?searchContent=" + URLEncoder.encode(userSearch, "UTF-8"), "");
+                }catch(Exception e) {
+                    Log.d("Encoding Error", e.toString());
+                }
                 JSONArray jsonObj1;
                 try {
                     jsonObj1 = new JSONArray(result1);
@@ -161,16 +168,17 @@ public class SearchFriends extends Fragment implements Button.OnClickListener{
 
                     Button tempB = new Button(getActivity());
                     idFriendMap.put(tempB.getId(),email);
-                    tempB.setCompoundDrawablesWithIntrinsicBounds(0,R.drawable.ic_add,0,0);
+                    tempB.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_add,0,0,0);
                     //tempB.setWidth(50);
                     //tempB.setHeight(40);
                     tempB.setText(email);
+                    tempB.setBackgroundColor(Color.parseColor("#00ffffff"));
                     tempB.setGravity(Gravity.CENTER);
                     tempB.setOnClickListener(getOnClickDoSomething(tempB));
 
                     LinearLayout tempL = new LinearLayout(getActivity());
                     tempL.setMinimumWidth(myLInearLayout.getWidth());
-                    tempL.setGravity(Gravity.RIGHT);
+                    tempL.setGravity(Gravity.LEFT);
                     tempL.setOrientation(LinearLayout.HORIZONTAL);
 //                    tempL.addView(tempV);
                     tempL.addView(tempB);

@@ -77,6 +77,11 @@ public class LoginActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void coverScreen(View view) {
+        Intent intent = new Intent(this, CoverScreen.class);
+        startActivity(intent);
+    }
+
     /** Called when the user clicks the login button */
     public void logIn(View view) {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();

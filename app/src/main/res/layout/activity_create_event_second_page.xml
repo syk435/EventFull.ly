@@ -41,30 +41,6 @@
             android:onClick="doneCreateEvent"
             />
 
-        <!--<LinearLayout-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:paddingTop="16dp"-->
-            <!--android:layout_gravity="center_horizontal"-->
-            <!--android:orientation="horizontal">-->
-
-            <!--<TextView android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center"-->
-                <!--android:text="Kevin"-->
-                <!--android:textSize="20sp"/>-->
-
-            <!--<Button-->
-                <!--android:id="@+id/testAdd1"-->
-                <!--android:layout_width="50dp"-->
-                <!--android:layout_height="40dp"-->
-                <!--android:drawableRight="@drawable/ic_add"-->
-                <!--android:drawableEnd="@drawable/ic_add"-->
-                <!--android:onClick="addFriendKevin"-->
-                <!--/>-->
-        <!--</LinearLayout>-->
-
-
     </LinearLayout>
 </ScrollView>
 </LinearLayout>
